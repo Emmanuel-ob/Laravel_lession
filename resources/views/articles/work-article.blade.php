@@ -17,18 +17,18 @@
 						@if (\Session::has('message'))
 							<div class="alert alert-success">{{ \Session::get('message') }}</div>
 						@endif
-						<h4>comments:</h4>
-						<form class="form" action="/articles/{{ $article->id }}/comment" method="post">
+						<h4>Edit Article:</h4>
+						<form class="form" action="/admin/articles/{{ $article->id }}/update" method="post">
 							{{ csrf_field() }}
-							<input type="hidden" name="article_id" value="{{$article->id}}">
+							<input type="hidden" name="article_id" value="{{ $article->id }}">
 							<div>
-								<label>Name</label>
+								<label>Title</label>
 							</div>
-							<input type="text" name="name"><br>
+							<input type="text" name="title" value="{{ $article->title }}"><br>
 							<div>
-								<label>Comment</label>
+								<label>Body</label>
 							</div>
-							<textarea name="comment" rows="4" cols="70"></textarea>
+							<textarea name="body" rows="4" cols="70" > {{ $article->body }} </textarea>
 							<button class="btn btn-md btn-success" name="submit" value="submit">Submit</button>
 						</form>
 					</div>

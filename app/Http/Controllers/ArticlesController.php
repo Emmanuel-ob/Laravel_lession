@@ -36,29 +36,29 @@ class ArticlesController extends Controller
         return view('articles.view-article', compact('article', 'comment'));
     }
 
-    public function submitcomment(Request $request)
-	{
-		// $article = $this->article->where('id', $request->id)->first();
+ //    public function submitcomment(Request $request)
+	// {
+	// 	// $article = $this->article->where('id', $request->id)->first();
 
-		// $comment = $this->comment->create($request, [
-		// 	'article_id'		=> $request->article_id,
-		// 	'name'				=> $request->name,
-		// 	'comment'			=> $request->comment,
-		// ]);
+	// 	// $comment = $this->comment->create($request, [
+	// 	// 	'article_id'		=> $request->article_id,
+	// 	// 	'name'				=> $request->name,
+	// 	// 	'comment'			=> $request->comment,
+	// 	// ]);
 
-		// $comment->save();
+	// 	// $comment->save();
 
-		// Or try
+	// 	// Or try
 
-		if($request->isMethod('post')){
+	// 	if($request->isMethod('post')){
 
-			$this->validate($request->all(), [
-				'name'	=> 'required|min:3|alpha',
-				'text'	=> 'required|max:1000',
-			]);
+	// 		$this->validate($request->all(), [
+	// 			'name'	=> 'required|min:3|alpha',
+	// 			'text'	=> 'required|max:1000',
+	// 		]);
 
-		}
+	// 	}
 
-		return redirect()->back();
-	}
+	// 	return redirect()->back();
+	// }
 }
